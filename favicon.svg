@@ -1,0 +1,53 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="heartShape">
+      <path d="M16,6 C12,2 8,2 8,8 C8,14 16,24 16,24 C16,24 24,14 24,8 C24,2 20,2 16,6 Z"/>
+    </clipPath>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="16" cy="16" r="15" fill="white" stroke="#20B2AA" stroke-width="1"/>
+  
+  <!-- Left side - Dog (Teal background) -->
+  <path d="M16,6 C12,2 8,2 8,8 C8,14 16,24 16,24 C16,24 24,14 24,8 C24,2 20,2 16,6 Z" 
+        fill="#20B2AA" clip-path="url(#heartShape)"/>
+  
+  <!-- Dog silhouette -->
+  <g transform="translate(10, 10)">
+    <!-- Dog head -->
+    <ellipse cx="4" cy="6" rx="3" ry="4" fill="white"/>
+    <!-- Dog ear -->
+    <ellipse cx="2" cy="4" rx="1" ry="2" fill="white"/>
+    <!-- Dog snout -->
+    <ellipse cx="6" cy="7" rx="2" ry="1" fill="white"/>
+    <!-- Dog eye -->
+    <circle cx="3" cy="5" r="0.5" fill="#20B2AA"/>
+  </g>
+  
+  <!-- Right side - Cat (Orange background) -->
+  <g transform="translate(16, 0)">
+    <path d="M16,6 C12,2 8,2 8,8 C8,14 16,24 16,24 C16,24 24,14 24,8 C24,2 20,2 16,6 Z" 
+          fill="#FF8C00" clip-path="url(#heartShape)"/>
+  </g>
+  
+  <!-- Cat silhouette -->
+  <g transform="translate(18, 10)">
+    <!-- Cat head -->
+    <ellipse cx="4" cy="6" rx="3" ry="4" fill="white"/>
+    <!-- Cat ears -->
+    <polygon points="2,3 3,1 4,3" fill="white"/>
+    <polygon points="5,3 6,1 7,3" fill="white"/>
+    <!-- Cat eye -->
+    <circle cx="3" cy="5" r="0.5" fill="#FF8C00"/>
+  </g>
+  
+  <!-- Paw print at bottom -->
+  <g transform="translate(13, 22)">
+    <!-- Main paw pad -->
+    <ellipse cx="3" cy="2" rx="2" ry="1" fill="white"/>
+    <!-- Toe pads -->
+    <ellipse cx="2" cy="0" rx="0.5" ry="1" fill="white"/>
+    <ellipse cx="3" cy="0" rx="0.5" ry="1" fill="white"/>
+    <ellipse cx="4" cy="0" rx="0.5" ry="1" fill="white"/>
+  </g>
+</svg>

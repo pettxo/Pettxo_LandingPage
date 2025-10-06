@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Pettxo brings pets, pet parents, and pet lovers together on a single platform. A community built to connect, care, and celebrate pets."
+    />
+    <meta
+      name="keywords"
+      content="pets, pet care, pet community, pet services, pet app, pet platform"
+    />
+    <meta name="author" content="Pettxo" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pettxo.com/" />
+    <meta
+      property="og:title"
+      content="Pettxo - Where Pets and People Connect"
+    />
+    <meta
+      property="og:description"
+      content="Pettxo brings pets, pet parents, and pet lovers together on a single platform."
+    />
+    <meta property="og:image" content="assets/logo.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://pettxo.com/" />
+    <meta
+      property="twitter:title"
+      content="Pettxo - Where Pets and People Connect"
+    />
+    <meta
+      property="twitter:description"
+      content="Pettxo brings pets, pet parents, and pet lovers together on a single platform."
+    />
+    <meta property="twitter:image" content="assets/logo.jpg" />
+
+    <title>Pettxo - Where Pets and People Connect</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate icon" href="assets/logo.jpg" type="image/jpeg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header/Navigation -->
+    <header class="header">
+      <nav class="nav container">
+        <div class="nav__logo">
+          <a href="#home" class="nav__logo-link">
+            <img
+              src="assets/logo.jpg"
+              alt="Pettxo Logo"
+              class="nav__logo-img"
+              s
+            />
+            <span>PETTXO</span>
+          </a>
+        </div>
+
+        <ul class="nav__menu">
+          <li><a href="#home" class="nav__link">Home</a></li>
+          <li><a href="#waitlist" class="nav__link">Waitlist</a></li>
+          <li><a href="#survey" class="nav__link">Survey</a></li>
+          <li><a href="#contact" class="nav__link">Contact</a></li>
+        </ul>
+        <div class="nav__toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
+      <div class="nav__overlay"></div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="home" class="hero">
+        <div class="container">
+          <div class="hero__content">
+            <div class="hero__text">
+              <h1 class="hero__title">Where Pets and People Connect</h1>
+              <p class="hero__description">
+                Tired of juggling multiple apps for your pets? Pettxo brings it
+                all together — social community + services — in one simple
+                platform.
+              </p>
+              <div class="hero__buttons">
+                <a href="#waitlist" class="btn btn--primary btn--large sparkle">
+                  <i class="fas fa-rocket"></i>
+                  Join the Waitlist
+                </a>
+                <button
+                  id="surveyBtn"
+                  class="btn btn--secondary btn--large sparkle"
+                >
+                  <i class="fas fa-clipboard-list"></i>
+                  Take the Survey
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Pettxo Section -->
+      <section class="why-pettxo">
+        <div class="container">
+          <h2 class="section__title">Why Pettxo?</h2>
+          <div class="why-pettxo__content">
+            <div class="why-pettxo__problem">
+              <h3>Today's Problem</h3>
+              <p>
+                Pet parents struggle with fragmented services, unreliable
+                information, and lack of community support when caring for their
+                beloved pets.
+              </p>
+            </div>
+            <div class="why-pettxo__text">
+              <h3>Pettxo's Solution</h3>
+              <p>
+                Pettxo brings pets, pet parents, and pet lovers together on a
+                single platform. A community built to connect, care, and
+                celebrate pets — all in one place.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Welcome Banner -->
+      <section class="coming-soon">
+        <div class="container">
+          <div class="coming-soon__banner">
+            <div class="banner-pet">😼</div>
+            <div class="banner-content">
+              <i class="fas fa-rocket"></i>
+              <span
+                >Coming Soon – Be the first to join the future of pet care</span
+              >
+              <i class="fas fa-rocket"></i>
+            </div>
+            <div class="banner-pet">🐕</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Waitlist Section -->
+      <section id="waitlist" class="waitlist">
+        <div class="container">
+          <h2 class="section__title">Get Early Access</h2>
+          <p class="section__description">
+            Join our exclusive waitlist and be among the first to experience
+            Pettxo when we launch. Sign up today and help shape the future of
+            pet care.
+          </p>
+          <form class="waitlist__form" id="waitlistForm">
+            <div class="form__group">
+              <label for="email">Your email address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email *"
+                required
+              />
+            </div>
+            <div class="form__group">
+              <label for="name">Your name</label>
+              <input type="text" id="name" name="name" placeholder="Name" />
+            </div>
+            <div class="form__group">
+              <label for="petType">Select your pet type</label>
+              <select id="petType" name="petType">
+                <option value="">Pet Type</option>
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="bird">Bird</option>
+                <option value="fish">Fish</option>
+                <option value="rabbit">Rabbit</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">
+              <i class="fas fa-paper-plane"></i>
+              Join the Waitlist
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Survey Section -->
+      <section id="survey" class="survey">
+        <div class="container">
+          <h2 class="section__title">Help Us Build Pettxo</h2>
+          <p class="section__description">
+            Love pets? Whether you’re a pet parent, planning to adopt, or simply
+            enjoy being around animals — your voice matters. Take our 2-minute
+            survey and help us design the perfect platform for you.
+          </p>
+          <button id="surveyBtn2" class="btn btn--secondary btn--large sparkle">
+            <i class="fas fa-clipboard-list"></i>
+            Take the Survey
+          </button>
+        </div>
+      </section>
+
+      <!-- Mission Section -->
+      <section class="mission">
+        <div class="container">
+          <h2 class="section__title">Our Mission</h2>
+          <p class="mission__text">
+            Pets give us unconditional love — and we want to give them the same.
+            Pettxos mission is to create a global ecosystem where pets, pet
+            parents, and caregivers thrive together with trust, care, and
+            compassion.
+          </p>
+        </div>
+      </section>
+
+      <!-- Visual Illustration Section -->
+      <section class="illustration">
+        <div class="container">
+          <div class="illustration__content">
+            <div class="pets-ecosystem">
+              <div class="ecosystem-center">
+                <div class="phone-app">
+                  <div class="app-icon">🏠</div>
+                  <div class="app-icon">🐾</div>
+                  <div class="app-icon">💬</div>
+                </div>
+              </div>
+              <div class="pet pet--dog-eco">🐕</div>
+              <div class="pet pet--cat-eco">🐱</div>
+              <div class="pet pet--bird-eco">🦜</div>
+              <div class="pet pet--rabbit-eco">🐰</div>
+              <div class="pet pet--fish-eco">🐠</div>
+            </div>
+          </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <p class="illustration__caption">All your pet needs, in one place.</p>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__section">
+            <h3>Contact</h3>
+            <p>
+              <a href="mailto:officialpettxo@gmail.com"
+                >officialpettxo@gmail.com</a
+              >
+            </p>
+          </div>
+          <div class="footer__section">
+            <h3>Follow Us</h3>
+            <p>
+              <a href="https://instagram.com/pettxo_official" target="_blank"
+                >Instagram @pettxo_official</a
+              >
+            </p>
+          </div>
+          <div class="footer__section">
+            <h3>Legal</h3>
+            <p>
+              <a href="privacy.html">Privacy Policy</a> |
+              <a href="terms.html">Terms of Service</a>
+            </p>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p>&copy; 2025 Pettxo. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Survey Modal -->
+    <div id="surveyModal" class="modal">
+      <div class="modal__content">
+        <div class="modal__header">
+          <h2>
+            <img
+              src="assets/logo.jpg"
+              alt="Pettxo Logo"
+              style="
+                width: 30px;
+                height: 30px;
+                vertical-align: middle;
+                margin-right: 8px;
+              "
+            />
+            Pettxo Survey
+          </h2>
+          <button class="modal__close" id="closeModal">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal__body">
+          <iframe id="surveyFrame" src="survey.html" frameborder="0"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="survey-app.js"></script>
+    <script>
+      // Survey Modal Functionality
+      const surveyModal = document.getElementById("surveyModal");
+      const surveyBtn = document.getElementById("surveyBtn");
+      const surveyBtn2 = document.getElementById("surveyBtn2");
+      const closeModal = document.getElementById("closeModal");
+      const surveyFrame = document.getElementById("surveyFrame");
+
+      // Open modal when survey buttons are clicked
+      function openSurveyModal() {
+        surveyModal.style.display = "flex";
+        document.body.style.overflow = "hidden";
+        // Reset the iframe to ensure fresh load
+        surveyFrame.src = surveyFrame.src;
+      }
+
+      // Close modal
+      function closeSurveyModal() {
+        surveyModal.style.display = "none";
+        document.body.style.overflow = "auto";
+      }
+
+      // Event listeners
+      surveyBtn.addEventListener("click", openSurveyModal);
+      surveyBtn2.addEventListener("click", openSurveyModal);
+      closeModal.addEventListener("click", closeSurveyModal);
+
+      // Close modal when clicking outside
+      surveyModal.addEventListener("click", function (e) {
+        if (e.target === surveyModal) {
+          closeSurveyModal();
+        }
+      });
+
+      // Close modal with Escape key
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && surveyModal.style.display === "flex") {
+          closeSurveyModal();
+        }
+      });
+    </script>
+  </body>
+</html>

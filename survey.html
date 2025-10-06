@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pettxo Survey</title>
+    <link rel="icon" href="assets/logo.jpg" type="image/jpeg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="survey.css" />
+  </head>
+  <body>
+    <div id="welcome-screen">
+      <img
+        src="assets/logo.jpg"
+        alt="Pettxo Logo"
+        style="
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          margin-bottom: 1.5rem;
+        "
+      />
+      <h1>Welcome to Pettxo!</h1>
+      <p>
+        This 2-minute survey helps us build the future of pet care. Your answers
+        will directly shape how we develop Pettxo to better serve pet parents
+        like you.
+      </p>
+      <button id="start-btn">Start Survey</button>
+    </div>
+    <form
+      id="survey-form"
+      class="hidden"
+      method="POST"
+      action="https://usebasin.com/f/b1990e87a797"
+    >
+      <div class="progress-container">
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 0%"></div>
+        </div>
+        <div class="step-indicator">
+          <span id="current-step">Step 1</span> of
+          <span id="total-steps">5</span>
+        </div>
+      </div>
+
+      <div id="question-container">
+        <!-- Questions inserted dynamically -->
+      </div>
+
+      <div class="button-group">
+        <button type="button" id="prev-btn" class="hidden">
+          <i class="fas fa-arrow-left"></i> Back
+        </button>
+        <button type="button" id="next-btn">
+          Next <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+    </form>
+    <div id="thank-you-screen" class="hidden">
+      <i
+        class="fas fa-check-circle"
+        style="
+          font-size: 3rem;
+          color: var(--primary-color);
+          margin-bottom: 1rem;
+        "
+      ></i>
+      <h1>Thank you for helping shape Pettxo!</h1>
+      <p>
+        Your feedback is invaluable to us. We'll keep you updated on our
+        progress.
+      </p>
+      <p>
+        Follow us on Instagram
+        <a href="https://instagram.com/pettxo_official" target="_blank"
+          ><i class="fab fa-instagram"></i> @pettxo_official</a
+        >
+        for sneak peeks.
+      </p>
+      <button id="return-home-btn" class="btn-return">
+        <i class="fas fa-home"></i> Return to Homepage &nbsp;
+      </button>
+    </div>
+
+    <script src="survey-app.js"></script>
+  </body>
+</html>
