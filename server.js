@@ -15,6 +15,7 @@ const WAITLIST_FILE = "waitlist.xlsx";
 const validateData = (data, requiredFields) => {
   for (const field of requiredFields) {
     if (!data[field] || typeof data[field] !== "string") {
+      console.log("Field one by one:",field)
       return false;
     }
   }
@@ -26,16 +27,29 @@ const saveToExcel = (data, file, sheetName) => {
   let workbook, worksheet;
   try {
     if (fs.existsSync(file)) {
+      // Read existing workbook
       workbook = XLSX.readFile(file);
-      worksheet = workbook.Sheets[workbook.SheetNames[0]];
+      const sheetNameToUse = workbook.SheetNames[0]; // usually the first sheet
+      worksheet = workbook.Sheets[sheetNameToUse];
+
+      // Convert sheet to array of arrays
       let rows = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+
+      // Add new row of data
       rows.push(Object.values(data));
-      worksheet = XLSX.utils.aoa_to_sheet(rows);
+
+      // Convert back to sheet
+      const newSheet = XLSX.utils.aoa_to_sheet(rows);
+
+      // Replace the old sheet with the new one
+      workbook.Sheets[sheetNameToUse] = newSheet;
+
     } else {
-      worksheet = XLSX.utils.aoa_to_sheet([
-        Object.keys(data),
-        Object.values(data),
-      ]);
+      // File doesn't exist — create new
+      const header = Object.keys(data);
+      const values = Object.values(data);
+      worksheet = XLSX.utils.aoa_to_sheet([header, values]);
+
       workbook = XLSX.utils.book_new();
       XLSX.utils.book_append_sheet(workbook, worksheet, sheetName);
     }
@@ -47,10 +61,37 @@ const saveToExcel = (data, file, sheetName) => {
   }
 };
 
+// const saveToExcel = (data, file, sheetName) => {
+//   let workbook, worksheet;
+//   try {
+//     if (fs.existsSync(file)) {
+//       workbook = XLSX.readFile(file);
+//       worksheet = workbook.Sheets[workbook.SheetNames[0]];
+//       let rows = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+//       rows.push(Object.values(data));
+//       worksheet = XLSX.utils.aoa_to_sheet(rows);
+//     } else {
+//       worksheet = XLSX.utils.aoa_to_sheet([
+//         Object.keys(data),
+//         Object.values(data),
+//       ]);
+//       workbook = XLSX.utils.book_new();
+//       XLSX.utils.book_append_sheet(workbook, worksheet, sheetName);
+//     }
+//     XLSX.writeFile(workbook, file);
+//     return true;
+//   } catch (error) {
+//     console.error(`Error writing to ${file}:`, error);
+//     return false;
+//   }
+// };
+
 // Survey endpoint
 app.post("/api/survey", (req, res) => {
   const data = req.body;
+  console.log("Data Founf",data)
   const requiredFields = ["firstName", "emailPrimary", "location", "q_ownPet"];
+  console.log("requiredFields:",requiredFields)
   if (!validateData(data, requiredFields)) {
     return res
       .status(400)
@@ -96,6 +137,7 @@ app.post("/api/survey", (req, res) => {
 // Waitlist endpoint
 app.post("/api/waitlist", (req, res) => {
   const data = req.body;
+  console.log(data)
   const requiredFields = ["email"];
   if (!validateData(data, requiredFields)) {
     return res

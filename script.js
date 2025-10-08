@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
           headers: {
             "Content-Type": "application/x-www-form-urlencoded",
           },
-          body: urlEncodedData,
+          body: JSON.stringify(data)//urlEncodedData,
         });
 
         if (response.ok) {

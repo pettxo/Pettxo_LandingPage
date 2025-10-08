@@ -1040,15 +1040,15 @@ document.addEventListener("DOMContentLoaded", function () {
           form.appendChild(input);
         }
 
-        // Create hidden iframe to handle response without leaving page
-        const iframeName = "hiddenIframe";
-        const iframe = document.createElement("iframe");
-        iframe.name = iframeName;
-        iframe.style.display = "none";
-        document.body.appendChild(iframe);
+        // // Create hidden iframe to handle response without leaving page
+        // const iframeName = "hiddenIframe";
+        // const iframe = document.createElement("iframe");
+        // iframe.name = iframeName;
+        // iframe.style.display = "none";
+        // document.body.appendChild(iframe);
 
-        // Target form to iframe
-        form.target = iframeName;
+        // // Target form to iframe
+        // form.target = iframeName;
 
         // Append form to body and submit
         document.body.appendChild(form);
