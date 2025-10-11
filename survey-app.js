@@ -35,8 +35,8 @@ function fetchLocationSuggestions(query, suggestionsList, inputField) {
           ) {
             parts.push(
               location.address.city ||
-                location.address.town ||
-                location.address.village
+              location.address.town ||
+              location.address.village
             );
           }
           if (location.address.state) {
@@ -86,49 +86,46 @@ document.addEventListener("DOMContentLoaded", function () {
   // Survey questions definition - organized by steps and branches
 
   // Step 0 - Basic Info (all on one page)
-  const basicInfoQuestions = [
-    {
-      id: "personalInfo",
-      text: "Personal Information",
-      type: "combined",
-      required: true,
-      fields: [
-        {
-          id: "firstName",
-          text: "First Name",
-          type: "text",
-          name: "firstName",
-          placeholder: "Your first name",
-          required: true,
-        },
-        {
-          id: "lastName",
-          text: "Last Name",
-          type: "text",
-          name: "lastName",
-          placeholder: "Your last name",
-          required: true,
-        },
-        {
-          id: "emailPrimary",
-          text: "Email Address",
-          type: "email",
-          name: "emailPrimary",
-          placeholder: "officialpettxo@gmail.com",
-          required: true,
-          validation: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-        },
-        {
-          id: "location",
-          text: "Location",
-          type: "location",
-          name: "location",
-          placeholder: "Enter your city (e.g., Pune)",
-          required: true,
-        },
-      ],
-    },
-  ];
+  const basicInfoQuestions = [{
+    id: "personalInfo",
+    text: "Personal Information",
+    type: "combined",
+    required: true,
+    fields: [{
+        id: "firstName",
+        text: "First Name",
+        type: "text",
+        name: "firstName",
+        placeholder: "Your first name",
+        required: true,
+      },
+      {
+        id: "lastName",
+        text: "Last Name",
+        type: "text",
+        name: "lastName",
+        placeholder: "Your last name",
+        required: true,
+      },
+      {
+        id: "emailPrimary",
+        text: "Email Address",
+        type: "email",
+        name: "emailPrimary",
+        placeholder: "officialpettxo@gmail.com",
+        required: true,
+        validation: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+      },
+      {
+        id: "location",
+        text: "Location",
+        type: "location",
+        name: "location",
+        placeholder: "Enter your city (e.g., Pune)",
+        required: true,
+      },
+    ],
+  }, ];
 
   // Step 1 - Root branching question
   const rootQuestion = {
@@ -137,8 +134,10 @@ document.addEventListener("DOMContentLoaded", function () {
     type: "radio",
     name: "q_ownPet",
     required: true,
-    options: [
-      { value: "Yes", label: "Yes" },
+    options: [{
+        value: "Yes",
+        label: "Yes"
+      },
       {
         value: "No, but planning to get one soon",
         label: "No, but planning to get one soon",
@@ -151,20 +150,37 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   // Pet Owner Branch
-  const petOwnerQuestions = [
-    {
+  const petOwnerQuestions = [{
       id: "q_petTypes",
       text: "What type(s) of pet do you have?",
       type: "checkbox",
       name: "q_petTypes",
       required: true,
-      options: [
-        { value: "Dog", label: "Dog" },
-        { value: "Cat", label: "Cat" },
-        { value: "Bird", label: "Bird" },
-        { value: "Fish", label: "Fish" },
-        { value: "Rabbit", label: "Rabbit" },
-        { value: "Other", label: "Other", hasOther: true },
+      options: [{
+          value: "Dog",
+          label: "Dog"
+        },
+        {
+          value: "Cat",
+          label: "Cat"
+        },
+        {
+          value: "Bird",
+          label: "Bird"
+        },
+        {
+          value: "Fish",
+          label: "Fish"
+        },
+        {
+          value: "Rabbit",
+          label: "Rabbit"
+        },
+        {
+          value: "Other",
+          label: "Other",
+          hasOther: true
+        },
       ],
     },
     {
@@ -192,10 +208,18 @@ document.addEventListener("DOMContentLoaded", function () {
       type: "radio",
       name: "q_petGender",
       required: false,
-      options: [
-        { value: "Male", label: "Male" },
-        { value: "Female", label: "Female" },
-        { value: "Prefer not to say", label: "Prefer not to say" },
+      options: [{
+          value: "Male",
+          label: "Male"
+        },
+        {
+          value: "Female",
+          label: "Female"
+        },
+        {
+          value: "Prefer not to say",
+          label: "Prefer not to say"
+        },
       ],
     },
     {
@@ -204,8 +228,7 @@ document.addEventListener("DOMContentLoaded", function () {
       type: "checkbox",
       name: "q_biggestChallenge",
       required: true,
-      options: [
-        {
+      options: [{
           value: "Finding reliable services",
           label: "Finding reliable services",
         },
@@ -221,7 +244,11 @@ document.addEventListener("DOMContentLoaded", function () {
           value: "Buying trusted products affordably",
           label: "Buying trusted products affordably",
         },
-        { value: "Other", label: "Other", hasOther: true },
+        {
+          value: "Other",
+          label: "Other",
+          hasOther: true
+        },
       ],
     },
     {
@@ -240,17 +267,24 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
   // Future Owner Branch
-  const futureOwnerQuestions = [
-    {
+  const futureOwnerQuestions = [{
       id: "q_when",
       text: "When are you planning to get a pet?",
       type: "radio",
       name: "q_when",
       required: true,
-      options: [
-        { value: "Within 6 months", label: "Within 6 months" },
-        { value: "Within 1 year", label: "Within 1 year" },
-        { value: "Not sure", label: "Not sure" },
+      options: [{
+          value: "Within 6 months",
+          label: "Within 6 months"
+        },
+        {
+          value: "Within 1 year",
+          label: "Within 1 year"
+        },
+        {
+          value: "Not sure",
+          label: "Not sure"
+        },
       ],
     },
     {
@@ -259,12 +293,27 @@ document.addEventListener("DOMContentLoaded", function () {
       type: "checkbox",
       name: "q_preferredType",
       required: true,
-      options: [
-        { value: "Dog", label: "Dog" },
-        { value: "Cat", label: "Cat" },
-        { value: "Bird", label: "Bird" },
-        { value: "Rabbit", label: "Rabbit" },
-        { value: "Other", label: "Other", hasOther: true },
+      options: [{
+          value: "Dog",
+          label: "Dog"
+        },
+        {
+          value: "Cat",
+          label: "Cat"
+        },
+        {
+          value: "Bird",
+          label: "Bird"
+        },
+        {
+          value: "Rabbit",
+          label: "Rabbit"
+        },
+        {
+          value: "Other",
+          label: "Other",
+          hasOther: true
+        },
       ],
     },
     {
@@ -284,18 +333,27 @@ document.addEventListener("DOMContentLoaded", function () {
       type: "checkbox",
       name: "q_mainConcern",
       required: true,
-      options: [
-        {
+      options: [{
           value: "Responsibility/time commitment",
           label: "Responsibility/time commitment",
         },
-        { value: "Cost of care", label: "Cost of care" },
+        {
+          value: "Cost of care",
+          label: "Cost of care"
+        },
         {
           value: "Finding trusted services",
           label: "Finding trusted services",
         },
-        { value: "Lack of information", label: "Lack of information" },
-        { value: "Other", label: "Other", hasOther: true },
+        {
+          value: "Lack of information",
+          label: "Lack of information"
+        },
+        {
+          value: "Other",
+          label: "Other",
+          hasOther: true
+        },
       ],
     },
     {
@@ -313,15 +371,13 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
   // Service Provider Branch
-  const serviceProviderQuestions = [
-    {
+  const serviceProviderQuestions = [{
       id: "q_offerService",
       text: "Do you offer pet-related services?",
       type: "radio",
       name: "q_offerService",
       required: true,
-      options: [
-        {
+      options: [{
           value: "Yes, professionally (paid)",
           label: "Yes, professionally (paid)",
         },
@@ -329,7 +385,10 @@ document.addEventListener("DOMContentLoaded", function () {
           value: "Yes, casually (sit/walk/play dates)",
           label: "Yes, casually (sit/walk/play dates)",
         },
-        { value: "No", label: "No" },
+        {
+          value: "No",
+          label: "No"
+        },
       ],
     },
     {
@@ -341,13 +400,31 @@ document.addEventListener("DOMContentLoaded", function () {
       conditional: true,
       showIf: (answers) =>
         answers.q_offerService && answers.q_offerService !== "No",
-      options: [
-        { value: "Pet sitting", label: "Pet sitting" },
-        { value: "Dog walking", label: "Dog walking" },
-        { value: "Grooming", label: "Grooming" },
-        { value: "Training", label: "Training" },
-        { value: "Play dates", label: "Play dates" },
-        { value: "Other", label: "Other", hasOther: true },
+      options: [{
+          value: "Pet sitting",
+          label: "Pet sitting"
+        },
+        {
+          value: "Dog walking",
+          label: "Dog walking"
+        },
+        {
+          value: "Grooming",
+          label: "Grooming"
+        },
+        {
+          value: "Training",
+          label: "Training"
+        },
+        {
+          value: "Play dates",
+          label: "Play dates"
+        },
+        {
+          value: "Other",
+          label: "Other",
+          hasOther: true
+        },
       ],
     },
     {
@@ -364,8 +441,7 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
   // General Questions (for all branches)
-  const generalQuestions = [
-    {
+  const generalQuestions = [{
       id: "q_currentApps",
       text: "Which pet-related apps or services do you currently use?",
       type: "text",
@@ -379,11 +455,22 @@ document.addEventListener("DOMContentLoaded", function () {
       type: "radio",
       name: "q_contentFrequency",
       required: true,
-      options: [
-        { value: "Daily", label: "Daily" },
-        { value: "Weekly", label: "Weekly" },
-        { value: "Occasionally", label: "Occasionally" },
-        { value: "Rarely", label: "Rarely" },
+      options: [{
+          value: "Daily",
+          label: "Daily"
+        },
+        {
+          value: "Weekly",
+          label: "Weekly"
+        },
+        {
+          value: "Occasionally",
+          label: "Occasionally"
+        },
+        {
+          value: "Rarely",
+          label: "Rarely"
+        },
       ],
     },
     {
@@ -392,10 +479,18 @@ document.addEventListener("DOMContentLoaded", function () {
       type: "radio",
       name: "q_platformInterest",
       required: true,
-      options: [
-        { value: "Definitely yes", label: "Definitely yes" },
-        { value: "Maybe", label: "Maybe" },
-        { value: "No", label: "No" },
+      options: [{
+          value: "Definitely yes",
+          label: "Definitely yes"
+        },
+        {
+          value: "Maybe",
+          label: "Maybe"
+        },
+        {
+          value: "No",
+          label: "No"
+        },
       ],
     },
     {
@@ -404,10 +499,18 @@ document.addEventListener("DOMContentLoaded", function () {
       type: "radio",
       name: "q_earlyAccess",
       required: true,
-      options: [
-        { value: "Yes, sign me up!", label: "Yes, sign me up!" },
-        { value: "Maybe later", label: "Maybe later" },
-        { value: "No", label: "No" },
+      options: [{
+          value: "Yes, sign me up!",
+          label: "Yes, sign me up!"
+        },
+        {
+          value: "Maybe later",
+          label: "Maybe later"
+        },
+        {
+          value: "No",
+          label: "No"
+        },
       ],
     },
     {
@@ -756,9 +859,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Button visibility
     prevBtn.classList.toggle("hidden", step === 0);
     nextBtn.innerHTML =
-      step === questionOrder.length - 1
-        ? "Submit <i class='fas fa-check'></i>"
-        : "Next <i class='fas fa-arrow-right'></i>";
+      step === questionOrder.length - 1 ?
+      "Submit <i class='fas fa-check'></i>" :
+      "Next <i class='fas fa-arrow-right'></i>";
   }
 
   // Update progress bar
@@ -847,7 +950,7 @@ document.addEventListener("DOMContentLoaded", function () {
           if (!input || input.value.trim() === "") {
             const fieldName = field.text.replace(" *", "").toLowerCase();
             showValidationError(q, `Please enter your ${fieldName}`);
-            input?.focus();
+            input ?.focus();
             return false;
           }
 
@@ -991,54 +1094,71 @@ document.addEventListener("DOMContentLoaded", function () {
           location: allAnswers.location || "",
           branchType: branchType,
           q_ownPet: allAnswers.q_ownPet || "",
-          q_petTypes: Array.isArray(allAnswers.q_petTypes)
-            ? allAnswers.q_petTypes.join(", ")
-            : allAnswers.q_petTypes || "",
+          q_petTypes: Array.isArray(allAnswers.q_petTypes) ?
+            allAnswers.q_petTypes.join(", ") :
+            allAnswers.q_petTypes || "",
           q_petTypes_other: allAnswers.q_petTypes_other || "",
           q_breeds: allAnswers.q_breeds || "",
           q_petGender: allAnswers.q_petGender || "",
-          q_biggestChallenge: Array.isArray(allAnswers.q_biggestChallenge)
-            ? allAnswers.q_biggestChallenge.join(", ")
-            : allAnswers.q_biggestChallenge || "",
+          q_biggestChallenge: Array.isArray(allAnswers.q_biggestChallenge) ?
+            allAnswers.q_biggestChallenge.join(", ") :
+            allAnswers.q_biggestChallenge || "",
           q_biggestChallenge_other: allAnswers.q_biggestChallenge_other || "",
           q_when: allAnswers.q_when || "",
-          q_preferredType: Array.isArray(allAnswers.q_preferredType)
-            ? allAnswers.q_preferredType.join(", ")
-            : allAnswers.q_preferredType || "",
+          q_preferredType: Array.isArray(allAnswers.q_preferredType) ?
+            allAnswers.q_preferredType.join(", ") :
+            allAnswers.q_preferredType || "",
           q_preferredType_other: allAnswers.q_preferredType_other || "",
-          q_mainConcern: Array.isArray(allAnswers.q_mainConcern)
-            ? allAnswers.q_mainConcern.join(", ")
-            : allAnswers.q_mainConcern || "",
+          q_mainConcern: Array.isArray(allAnswers.q_mainConcern) ?
+            allAnswers.q_mainConcern.join(", ") :
+            allAnswers.q_mainConcern || "",
           q_mainConcern_other: allAnswers.q_mainConcern_other || "",
           q_offerService: allAnswers.q_offerService || "",
-          q_serviceTypes: Array.isArray(allAnswers.q_serviceTypes)
-            ? allAnswers.q_serviceTypes.join(", ")
-            : allAnswers.q_serviceTypes || "",
+          q_serviceTypes: Array.isArray(allAnswers.q_serviceTypes) ?
+            allAnswers.q_serviceTypes.join(", ") :
+            allAnswers.q_serviceTypes || "",
           q_serviceTypes_other: allAnswers.q_serviceTypes_other || "",
           q_currentApps: allAnswers.q_currentApps || "",
           q_contentFrequency: allAnswers.q_contentFrequency || "",
           q_platformInterest: allAnswers.q_platformInterest || "",
           q_earlyAccess: allAnswers.q_earlyAccess || "",
-          emailConfirm:
-            allAnswers.emailConfirm || allAnswers.emailConfirmOptional || "",
+          emailConfirm: allAnswers.emailConfirm || allAnswers.emailConfirmOptional || "",
           q_features: allAnswers.q_features || "",
         };
-
+        fetch(
+            "https://script.google.com/macros/s/AKfycbwg90128T20P1MdGoonIDruAkBVV9rY489nkXCXR5NJGfLz6C4LMRxCkyrLOXc63cyZZA/exec", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(submissionData),
+            }
+          )
+          .then((response) => response.text())
+          .then((data) => {
+            console.log("Server Response:", data);
+            // Optionally, show a thank-you page or next step
+          })
+          .catch((error) => {
+            console.error("Error submitting form:", error);
+          });
         // Create hidden form
-        const form = document.createElement("form");
-        form.method = "POST";
-        form.action =
-          "https://script.google.com/macros/s/AKfycbx_ZJNZfcC1IfWEkzzjwQox5sgHJI6K-Vbr2nUKcz3_FY4uAUbOqNzhSy_uK77nXLON2Q/exec";
-        form.style.display = "none";
+        // -----------**for test json**-----------
+        // const form = document.createElement("form");
+        // form.method = "POST";
+        // form.action =
+        //   "https://script.google.com/macros/s/AKfycbwg90128T20P1MdGoonIDruAkBVV9rY489nkXCXR5NJGfLz6C4LMRxCkyrLOXc63cyZZA/exec";
+        // form.style.display = "none";
 
-        // Add each data field as a hidden input
-        for (const [key, value] of Object.entries(submissionData)) {
-          const input = document.createElement("input");
-          input.type = "hidden";
-          input.name = key;
-          input.value = value;
-          form.appendChild(input);
-        }
+        // // Add each data field as a hidden input
+        // for (const [key, value] of Object.entries(submissionData)) {
+        //   const input = document.createElement("input");
+        //   input.type = "hidden";
+        //   input.name = key;
+        //   input.value = value;
+        //   form.appendChild(input);
+        // }
+        // -----------**for test json**-----------
 
         // // Create hidden iframe to handle response without leaving page
         // const iframeName = "hiddenIframe";
@@ -1051,13 +1171,16 @@ document.addEventListener("DOMContentLoaded", function () {
         // form.target = iframeName;
 
         // Append form to body and submit
-        document.body.appendChild(form);
-        form.submit();
+
+        // -----------**for test json**-----------
+        // document.body.appendChild(form);
+        // form.submit();
+        // -----------**for test json**-----------
 
         // Clean up (optional: remove after submit)
         setTimeout(() => {
-          document.body.removeChild(form);
-          document.body.removeChild(iframe);
+          // document.body.removeChild(form);
+          // document.body.removeChild(iframe);
         }, 1000);
 
         // Assume success and show thank you (or add iframe onload listener for confirmation)
