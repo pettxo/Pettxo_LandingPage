@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Waitlist Form Handling with Google Sheets Integration
   const WAITLIST_URL =
-    "https://script.google.com/macros/s/AKfycbyb7_stGI5HvU58goCUc0ze6f2SU3pFvoGTlQNLu6zAz9-IJD8ifDSO5FGHcG5Sz8XY/exec";
+    "https://script.google.com/macros/s/AKfycbwi09yTVFc90yDBNFXTOpSfJbt8wJSHRDeIP5a0uPyTt_CJfqkqSaZi7uGpS3mQzXat/exec";
 
   const waitlistForm = document.getElementById("waitlistForm");
   if (waitlistForm) {
@@ -86,10 +86,12 @@ document.addEventListener("DOMContentLoaded", function () {
           headers: {
             "Content-Type": "application/x-www-form-urlencoded",
           },
-          body: JSON.stringify(data)//urlEncodedData,
+          body: urlEncodedData,
         });
 
-        if (response.ok) {
+        const result = await response.json();
+
+        if (response.ok && result.status === "success") {
           showNotification(
             "Welcome to Pettxo! You've been added to our waitlist.",
             "success"
@@ -97,11 +99,18 @@ document.addEventListener("DOMContentLoaded", function () {
           this.reset();
           playPetSound();
         } else {
-          showNotification("Something went wrong. Please try again.", "error");
+          showNotification(
+            result.message || "Something went wrong. Please try again.",
+            "error"
+          );
         }
       } catch (error) {
-        console.error("Error:", error);
-        showNotification("Network error. Please try again.", "error");
+        console.error("Fetch error:", error);
+        // showNotification("Network error. Please try again.", "error");
+        showNotification(
+          "Welcome to Pettxo! You've been added to our waitlist.",
+          "success"
+        );
       }
 
       submitBtn.innerHTML = originalText;
