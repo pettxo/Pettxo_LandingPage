@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 🐾 Pettxo Website
 
 **Where Pets and People Connect**
@@ -221,6 +220,6 @@ Potential additions for future versions:
 ---
 
 **Built with ❤️ for pets and their parents everywhere! 🐕🐱🦜**
-=======
+
 # Pettxo_LandingPage
 >>>>>>> aedcc47f1a297aee39a3e657536d25fa5f914340
